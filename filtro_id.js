@@ -46,6 +46,12 @@ function loopThroughApi(page) {
     })
     .catch(error => {
       console.error('Error:', error);
+      // Display error message using SweetAlert
+      Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: 'An error occurred while fetching data from the API',
+      });
     });
 }
 
