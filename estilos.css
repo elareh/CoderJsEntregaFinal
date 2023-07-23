@@ -1,17 +1,33 @@
+header {
+  background-image: ;
+}
+
+
+.character-card {
+  background-color: green;
+  border: 1px solid black;
+  margin: 10px;
+  padding: 10px;
+  text-align: center;
+}
+
+.character-card img {
+  background-size: cover;
+}
+.character-name {
+  font-weight: bold;
+  margin-top: 10px;
+}
+.character-info {
+  margin: 10px 0;
+}
 .grid-container {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 10px;
-  }
+  display: grid;
+  flex-wrap: nowrap;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 0px;
+}
 
-  .character-card {
-    border: 1px solid #ccc;
-    padding: 10px;
-    text-align: center;
-  }
-
-  .character-image {
-    width: 100px;
-    height: 100px;
-    object-fit: cover;
-  }
+img.imagenCharacter {
+  background-size: cover;
+}
