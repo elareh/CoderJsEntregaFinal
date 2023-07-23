@@ -1,33 +1,65 @@
-header {
-  background-image: ;
+.encabezado {
+  background-image: url(/assets/images/27347.jpg);
+  background-size: cover;
+  height: 60vh;
 }
-
 
 .character-card {
   background-color: green;
   border: 1px solid black;
-  margin: 10px;
-  padding: 10px;
   text-align: center;
+  width: 250px; /* Adjust the width as per your requirement */
+  margin-left: 5px;
 }
 
-.character-card img {
-  background-size: cover;
-}
 .character-name {
   font-weight: bold;
-  margin-top: 10px;
+  margin-top: 5px;
+  font-size: 14px; /* Adjust the font-size as per your requirement */
 }
+
 .character-info {
-  margin: 10px 0;
+  margin: 5px 0;
+  font-size: 12px; /* Adjust the font-size as per your requirement */
 }
+
 .grid-container {
   display: grid;
-  flex-wrap: nowrap;
   grid-template-columns: repeat(5, 1fr);
-  grid-gap: 0px;
+  margin-top: 100px;
+  grid-gap: 0px; /* Adjust the grid-gap as per your requirement */
 }
 
 img.imagenCharacter {
   background-size: cover;
+  width: 80px; /* Adjust the width as per your requirement */
+  height: 80px; /* Adjust the height as per your requirement */
+}
+
+.botones {
+  text-align: center;
+}
+
+#previousPage,
+#nextPage {
+  display: inline-block;
+  margin: 10px;
+  padding: 5px 10px;
+  justify-content: center;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#previousPage:hover,
+#nextPage:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.tituloBuscador {
+  margin-top: 80px;
+  text-align: center;
 }
