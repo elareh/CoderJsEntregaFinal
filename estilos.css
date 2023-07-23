@@ -1,7 +1,7 @@
 .encabezado {
   background-image: url(/assets/images/27347.jpg);
   background-size: cover;
-  height: 60vh;
+  height: 100vh;
 }
 
 .character-card {
@@ -9,7 +9,7 @@
   border: 1px solid black;
   text-align: center;
   width: 250px; /* Adjust the width as per your requirement */
-  margin-left: 5px;
+  margin: 5px 5px 5px 5px;
 }
 
 .character-name {
