@@ -6,13 +6,43 @@
   <link rel="stylesheet" href="estilos.css">
   <title>RICK AND MORTY APP</title>
 </head>
-<body>
-  <div class="grid-container" id="charactersFromApi">
+<header class="encabezado">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+      <a class="navbar-brand" href="#">Hidden brand</a>
+      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <div class="encabezado">
 
   </div>
-  <div>
-    <button id="prevButton">Anterior</button>
-    <button id="nextButton">Siguiente</button>
+</header>
+<body>
+  <div class="tituloBuscador col-lg-12">
+    <h1>Busca cualquier personaje de Rick & Morty</h1>
+    <br>
+    <input type="text" id="buscador" placeholder="Buscar">
+  </div>
+  
+
+  <div class="grid-container" id="charactersFromApi">
+    
+  </div>
+  <div class="botones">
+
+    <button id="previousPage">Anterior</button>
+    <button id="nextPage">Siguiente</button>
+
   </div>
 
   <script src="./filtro_id.js" class=".result-container"></script>
