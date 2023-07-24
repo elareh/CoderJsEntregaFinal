@@ -70,3 +70,47 @@ img.imagenCharacter {
   margin-top: 80px;
   text-align: center;
 }
+
+
+#contact-form {
+  display: flex;
+  flex-direction: column;
+  max-width: 500px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: grey;
+}
+
+#contact-form label {
+  margin-bottom: 10px;
+}
+
+#contact-form input,
+#contact-form textarea {
+  padding: 8px;
+  margin-bottom: 20px;
+}
+
+#contact-form textarea {
+  resize: none;
+}
+
+#contact-form button {
+  padding: 10px 20px;
+  background-color: #3085d6;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.formSeccion {
+  background-image: url(https://elareh.github.io/CoderJsEntregaFinal/assets/images/27347.jpg);
+  background-size: cover;
+  text-align: center;
+}
+
+.formSeccion h1 {
+  color: white;
+  font-size: 80px;
+  padding-top: 200px;
+}
