@@ -139,7 +139,7 @@ $(document).ready(function() {
     e.preventDefault();
     var url = $(this).attr('href');
     
-    if (url === '/contacto.html') {
+    if (url === 'https://elareh.github.io/contacto.html') {
       Swal.fire({
         icon: 'error',
         title: 'Oops...',
