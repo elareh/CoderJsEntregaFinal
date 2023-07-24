@@ -136,6 +136,9 @@ function buscarElementos() {
 
 
 
+
+
+
 loopThroughApi(page);
 console.log(CharactersList);
 
