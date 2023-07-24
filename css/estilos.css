@@ -1,0 +1,72 @@
+.encabezado {
+  background-image: url(/assets/images/27347.jpg);
+  background-size: cover;
+  height: 100vh;
+}
+
+.character-card {
+  background: rgba(0, 0, 0, 0.9) url(/assets/images/portalfix.png) no-repeat center center; /* Adjust the alpha value (0.5) to make the background more or less transparent */
+  transition: background-image 0.5s;
+  border: 1px solid black;
+  text-align: center;
+  width: 250px; /* Adjust the width as per your requirement */
+  margin: 5px 5px 5px 5px;
+}
+
+.character-card:hover {
+  transform: scale(1.1); /* Adjust the scale value as per your preference */
+  background-image: url(/assets/images/petro-kosariekov-portal-gun-rick-and-morty2-2.gif);
+}
+
+.character-name {
+  font-weight: bold;
+  margin-top: 5px;
+  font-size: 16px; /* Adjust the font-size as per your requirement */
+}
+
+.character-info {
+  margin: 5px 0;
+  font-size: 14px; /* Adjust the font-size as per your requirement */
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  margin-top: 100px;
+  grid-gap: 0px; /* Adjust the grid-gap as per your requirement */
+}
+
+img.imagenCharacter {
+  background-size: cover;
+  width: 80px; /* Adjust the width as per your requirement */
+  height: 80px; /* Adjust the height as per your requirement */
+  margin-top: 10px;
+}
+
+.botones {
+  text-align: center;
+}
+
+#previousPage,
+#nextPage {
+  display: inline-block;
+  margin: 10px;
+  padding: 5px 10px;
+  justify-content: center;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#previousPage:hover,
+#nextPage:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.tituloBuscador {
+  margin-top: 80px;
+  text-align: center;
+}
