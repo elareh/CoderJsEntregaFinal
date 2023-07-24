@@ -134,6 +134,24 @@ function buscarElementos() {
   mostrarElementos();
 }
 
+$(document).ready(function() {
+  $('.nav-link').on('click', function(e) {
+    e.preventDefault();
+    var url = $(this).attr('href');
+    
+    if (url === '/contacto.html') {
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Page not found',
+        confirmButtonColor: '#3085d6',
+        confirmButtonText: 'OK',
+      });
+    } else {
+      window.location.href = url;
+    }
+  });
+});
 
 
 
