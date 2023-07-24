@@ -14,45 +14,45 @@ function CreateObject(id, name, species, gender, image) {
   CharactersList.push(newCharacter);
 }
 
-function loopThroughApi(page) {
-  fetch(page)
-    .then(response => response.json())
-    .then(data => {
-      const startIndex = (currentPage - 1) * charactersPerPage;
-      const endIndex = currentPage * charactersPerPage;
+async function loopThroughApi(page) {
+  try {
+    const response = await fetch(page);
+    const data = await response.json();
 
-      data.results.forEach((result, index) => {
-        if (index >= startIndex && index < endIndex) {
-          var idResult = result.id;
-          var nameResult = result.name;
-          var speciesResult = result.species;
-          var genderResult = result.gender;
-          var imageResult = result.image;
-          CreateObject(idResult, nameResult, speciesResult, genderResult, imageResult);
-        }
-      });
+    const startIndex = (currentPage - 1) * charactersPerPage;
+    const endIndex = currentPage * charactersPerPage;
 
-      if (data.info.next) {
-        page = data.info.next;
-        loopThroughApi(page);
-      } else {
-        mostrarElementos();
+    data.results.forEach((result, index) => {
+      if (index >= startIndex && index < endIndex) {
+        var idResult = result.id;
+        var nameResult = result.name;
+        var speciesResult = result.species;
+        var genderResult = result.gender;
+        var imageResult = result.image;
+        CreateObject(idResult, nameResult, speciesResult, genderResult, imageResult);
       }
-
-      if (document.getElementById('buscador').value.trim() !== '') {
-        buscarElementos();
-        return;
-      }
-    })
-    .catch(error => {
-      console.error('Error:', error);
-      // Display error message using SweetAlert
-      Swal.fire({
-        icon: 'error',
-        title: 'Error',
-        text: 'An error occurred while fetching data from the API',
-      });
     });
+
+    if (data.info.next) {
+      page = data.info.next;
+      await loopThroughApi(page);
+    } else {
+      mostrarElementos();
+    }
+
+    if (document.getElementById('buscador').value.trim() !== '') {
+      buscarElementos();
+      return;
+    }
+  } catch (error) {
+    console.error('Error:', error);
+    // Display error message using SweetAlert
+    Swal.fire({
+      icon: 'error',
+      title: 'Error',
+      text: 'An error occurred while fetching data from the API',
+    });
+  }
 }
 
 function mostrarElementos() {
