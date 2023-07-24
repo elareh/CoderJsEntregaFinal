@@ -15,7 +15,7 @@
 
 .character-card:hover {
   transform: scale(1.1); /* Adjust the scale value as per your preference */
-  background-image: url(/assets/images/petro-kosariekov-portal-gun-rick-and-morty2-2.gif);
+  background-image: url(./assets/images/petro-kosariekov-portal-gun-rick-and-morty2-2.gif);
 }
 
 .character-name {
