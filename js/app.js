@@ -1,3 +1,5 @@
+const fetch = require('node-fetch');
+
 var page = "https://rickandmortyapi.com/api/character/?page=";
 var CharactersList = [];
 let currentPage = 1;
