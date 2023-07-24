@@ -1,7 +1,10 @@
-var page = "https://rickandmortyapi.com/api/character/?page=";
-var CharactersList = [];
-let currentPage = 1;
-const charactersPerPage = 20;
+var page = "https://rickandmortyapi.com/api/character/?page="; //Variable con URL de Api
+var CharactersList = [];  // Array con personajes
+let currentPage = 1;  //Variable para paginacion
+const charactersPerPage = 20; //Variable para paginacion
+
+
+//Funcion para agregar personajes al array CharactersList
 
 function CreateObject(id, name, species, gender, image) {
   const newCharacter = {
@@ -14,13 +17,15 @@ function CreateObject(id, name, species, gender, image) {
   CharactersList.push(newCharacter);
 }
 
+//Funcion para recorrer la API y obtener los datos.
+
 function loopThroughApi(page) {
   fetch(page)
     .then(response => response.json())
     .then(data => {
       const startIndex = (currentPage - 1) * charactersPerPage;
       const endIndex = currentPage * charactersPerPage;
-
+      //Llamo funcion para agregar personajes al array
       data.results.forEach((result, index) => {
         if (index >= startIndex && index < endIndex) {
           var idResult = result.id;
@@ -31,7 +36,7 @@ function loopThroughApi(page) {
           CreateObject(idResult, nameResult, speciesResult, genderResult, imageResult);
         }
       });
-
+      //Busca entre las distintas paginas de la API para el buscador
       if (data.info.next) {
         page = data.info.next;
         loopThroughApi(page);
@@ -54,7 +59,7 @@ function loopThroughApi(page) {
       });
     });
 }
-
+//Funcion para mostrar por front los datos de cada personaje
 function mostrarElementos() {
   var container = document.getElementById('charactersFromApi');
   container.innerHTML = '';
@@ -64,7 +69,7 @@ function mostrarElementos() {
 
   for (var i = startIndex; i < endIndex && i < CharactersList.length; i++) {
     var personaje = CharactersList[i];
-
+    //Creo los elementos del front y sus clases
     var characterDiv = document.createElement('div');
     characterDiv.classList.add('character');
     characterDiv.classList.add('character-card');
@@ -93,7 +98,7 @@ function mostrarElementos() {
     container.appendChild(characterDiv);
   }
 }
-
+//Evento de botones siguiente y anterior
 document.getElementById('previousPage').addEventListener('click', function() {
   if (currentPage > 1) {
     currentPage--;
@@ -108,11 +113,11 @@ document.getElementById('nextPage').addEventListener('click', function() {
   }
 });
 
-
+//Funcionalidad buscador
 document.getElementById('buscador').addEventListener('input', function() {
   buscarElementos();
 });
-
+//Llamo al array original para que siempre busque por el total de objetos
 var originalCharactersList = CharactersList;
 
 function buscarElementos() {
@@ -135,7 +140,6 @@ function buscarElementos() {
 }
 
 
-
+//Llamo a funcion
 loopThroughApi(page);
-console.log(CharactersList);
 
